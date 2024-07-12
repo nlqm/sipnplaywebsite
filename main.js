@@ -17,7 +17,7 @@ const loader = new GLTFLoader();
 
 let drink;
 loader.load(
-    'assets/coffee.glb',
+    './assets/coffee.glb',
     function (gltf) {
         drink = gltf.scene;
         scene.add(drink);
