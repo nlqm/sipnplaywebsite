@@ -4,7 +4,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(65, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
 const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('canvas') });
 
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -17,7 +17,7 @@ const loader = new GLTFLoader();
 
 let drink;
 loader.load(
-    'assets/coffee.glb',
+    "assets/coffee.glb",
     function (gltf) {
         drink = gltf.scene;
         scene.add(drink);
