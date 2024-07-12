@@ -5,14 +5,12 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-const renderer = new THREE.WebGLRenderer({ canvas });
+const renderer = new THREE.WebGLRenderer({ canvas: document.querySelector('canvas') });
 
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true; // enable damping
-let canvas = document.getElementById("threejscanvas");
 // Select the canvas element
 renderer.setClearColor(new THREE.Color(0xffffff)); // hex for white
-renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 const loader = new GLTFLoader();
 
 let drink;
